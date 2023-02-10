@@ -1,10 +1,11 @@
 let display = document.querySelector("#value");
 const btnGroup= document.querySelectorAll(".btn")
 
-
+let value = 0;
 btnGroup.forEach((btn)=>{
-    let value = 0;
+    
     btn.addEventListener("click",function(e){
+       
         let target = e.currentTarget.classList;
         if(target.contains("decress")){
             value --;
@@ -14,7 +15,7 @@ btnGroup.forEach((btn)=>{
             value ++
            
         }
-        else{
+        else if(target.contains("reset")){
             value= 0
             
         } 
@@ -29,6 +30,5 @@ btnGroup.forEach((btn)=>{
         display.textContent = value
     })
 
-   
    
 })
